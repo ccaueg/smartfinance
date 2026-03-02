@@ -28,6 +28,7 @@ build/
 !**/src/test/**/build/
 
 .vscode/
+.github/
 
 .env
 *.env.local
