@@ -1,4 +1,4 @@
-package dev.caue.smartfinance.service;
+package dev.caue.smartfinance.security;
 
 import dev.caue.smartfinance.domain.User;
 import lombok.Getter;
@@ -12,7 +12,6 @@ import java.util.List;
 
 @Getter
 public class UserDetailsImpl implements UserDetails {
-
     private final Long id;
     private final String email;
     private final String password;

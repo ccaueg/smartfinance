@@ -1,6 +1,7 @@
 package dev.caue.smartfinance.security;
 
 import dev.caue.smartfinance.domain.User;
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
@@ -33,5 +34,13 @@ public class JwtService {
 
     private Key getSignKey() {
         return Keys.hmacShaKeyFor(Decoders.BASE64.decode(secret));
+    }
+
+    public Claims extractClaims(String token) {
+        return Jwts.parserBuilder()
+                .setSigningKey(getSignKey())
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
     }
 }
