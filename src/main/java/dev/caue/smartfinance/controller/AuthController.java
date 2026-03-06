@@ -7,6 +7,7 @@ import dev.caue.smartfinance.dto.RegisterRequest;
 import dev.caue.smartfinance.security.JwtService;
 import dev.caue.smartfinance.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -25,17 +26,18 @@ public class AuthController {
     private final UserService userService;
     private final JwtService jwtService;
 
-    @PostMapping("/register")
     @Operation(summary = "Register new user")
-    public ResponseEntity<AuthResponse> register(@Valid @RequestBody RegisterRequest request) {
-        User user = userService.register(request);
-        String token = jwtService.generateToken(user);
+    @ApiResponse(responseCode = "201", description = "User created")
+    @PostMapping("/register")
+    public ResponseEntity<Void> register(@Valid @RequestBody RegisterRequest request) {
+        userService.register(request);
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(new AuthResponse(token));
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @PostMapping("/login")
     @Operation(summary = "Authenticate user")
+    @ApiResponse(responseCode = "200", description = "Authentication successful")
+    @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@Valid @RequestBody LoginRequest request) {
         User user = userService.authenticate(request);
         String token = jwtService.generateToken(user);

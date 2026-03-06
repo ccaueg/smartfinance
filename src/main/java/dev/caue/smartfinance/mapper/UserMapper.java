@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 public class UserMapper {
     public User toEntity(RegisterRequest request, String hashedPassword) {
         return User.builder()
+                .name(request.name())
                 .email(request.email())
                 .password(hashedPassword)
                 .role(Role.USER)
