@@ -1,7 +1,7 @@
 package dev.caue.smartfinance.service;
 
-import dev.caue.smartfinance.domain.Role;
-import dev.caue.smartfinance.domain.User;
+import dev.caue.smartfinance.domain.user.Role;
+import dev.caue.smartfinance.domain.user.User;
 import dev.caue.smartfinance.dto.LoginRequest;
 import dev.caue.smartfinance.dto.RegisterRequest;
 import dev.caue.smartfinance.exception.EmailAlreadyExistsException;

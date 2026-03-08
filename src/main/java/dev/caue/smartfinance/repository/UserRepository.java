@@ -1,6 +1,6 @@
 package dev.caue.smartfinance.repository;
 
-import dev.caue.smartfinance.domain.User;
+import dev.caue.smartfinance.domain.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

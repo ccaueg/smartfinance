@@ -1,4 +1,4 @@
-package dev.caue.smartfinance.domain;
+package dev.caue.smartfinance.domain.transaction;
 
 public enum TransactionType {
     INCOME,

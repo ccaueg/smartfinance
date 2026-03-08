@@ -1,20 +1,14 @@
-package dev.caue.smartfinance.domain;
+package dev.caue.smartfinance.domain.transaction;
 
+import dev.caue.smartfinance.domain.category.Category;
+import dev.caue.smartfinance.domain.user.User;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "transactions")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Transaction {
 
     @Id
@@ -23,18 +17,22 @@ public class Transaction {
 
     private String description;
 
-    @Column(nullable = false)
     private BigDecimal amount;
-
-    @Enumerated(EnumType.STRING)
-    private Category category;
-
-    private LocalDate date;
 
     @Enumerated(EnumType.STRING)
     private TransactionType type;
 
+    private LocalDate date;
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
+    private LocalDateTime createdAt;
+
+    private LocalDateTime updatedAt;
 }

@@ -1,6 +1,6 @@
 package dev.caue.smartfinance.security;
 
-import dev.caue.smartfinance.domain.User;
+import dev.caue.smartfinance.domain.user.User;
 import lombok.Getter;
 import lombok.NonNull;
 import org.springframework.security.core.GrantedAuthority;

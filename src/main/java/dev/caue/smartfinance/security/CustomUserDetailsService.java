@@ -1,6 +1,6 @@
 package dev.caue.smartfinance.security;
 
-import dev.caue.smartfinance.domain.User;
+import dev.caue.smartfinance.domain.user.User;
 import dev.caue.smartfinance.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.jspecify.annotations.NonNull;

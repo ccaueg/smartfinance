@@ -1,6 +1,6 @@
 package dev.caue.smartfinance.controller;
 
-import dev.caue.smartfinance.domain.User;
+import dev.caue.smartfinance.domain.user.User;
 import dev.caue.smartfinance.dto.AuthResponse;
 import dev.caue.smartfinance.dto.LoginRequest;
 import dev.caue.smartfinance.dto.RegisterRequest;
