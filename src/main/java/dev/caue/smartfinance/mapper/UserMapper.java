@@ -1,6 +1,6 @@
 package dev.caue.smartfinance.mapper;
 
-import dev.caue.smartfinance.domain.user.Role;
+import dev.caue.smartfinance.domain.user.UserRole;
 import dev.caue.smartfinance.domain.user.User;
 import dev.caue.smartfinance.dto.RegisterRequest;
 import org.springframework.stereotype.Component;
@@ -12,7 +12,7 @@ public class UserMapper {
                 .name(request.name())
                 .email(request.email())
                 .password(hashedPassword)
-                .role(Role.USER)
+                .userRole(UserRole.USER)
                 .build();
     }
 }

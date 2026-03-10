@@ -1,6 +1,6 @@
 package dev.caue.smartfinance.service;
 
-import dev.caue.smartfinance.domain.user.Role;
+import dev.caue.smartfinance.domain.user.UserRole;
 import dev.caue.smartfinance.domain.user.User;
 import dev.caue.smartfinance.dto.LoginRequest;
 import dev.caue.smartfinance.dto.RegisterRequest;
@@ -45,7 +45,7 @@ class UserServiceTest {
                 .id(1L)
                 .email("test@email.com")
                 .password("encoded")
-                .role(Role.USER)
+                .userRole(UserRole.USER)
                 .build();
 
         when(userRepository.findByEmail(request.email())).thenReturn(Optional.of(user));
@@ -62,7 +62,7 @@ class UserServiceTest {
                 .id(1L)
                 .email("test@email.com")
                 .password("encoded")
-                .role(Role.USER)
+                .userRole(UserRole.USER)
                 .build();
 
         when(userRepository.findByEmail(request.email())).thenReturn(Optional.of(user));

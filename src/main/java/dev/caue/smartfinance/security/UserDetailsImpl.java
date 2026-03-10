@@ -22,7 +22,7 @@ public class UserDetailsImpl implements UserDetails {
         this.email = user.getEmail();
         this.password = user.getPassword();
         this.authorities =
-                List.of(new SimpleGrantedAuthority("ROLE_" + user.getRole().name()));
+                List.of(new SimpleGrantedAuthority("ROLE_" + user.getUserRole().name()));
     }
 
     @Override

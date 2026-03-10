@@ -1,6 +1,6 @@
 package dev.caue.smartfinance.domain.user;
 
-public enum Role {
+public enum UserRole {
     USER,
     ADMIN
 }
