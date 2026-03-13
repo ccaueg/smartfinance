@@ -12,7 +12,7 @@ public class UserMapper {
                 .name(request.name())
                 .email(request.email())
                 .password(hashedPassword)
-                .userRole(UserRole.USER)
+                .role(UserRole.USER)
                 .build();
     }
 }
