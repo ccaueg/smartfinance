@@ -9,6 +9,7 @@ import dev.caue.smartfinance.service.TransactionService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,6 +28,7 @@ public class TransactionController {
 
     @Operation(summary = "Create transaction")
     @ApiResponse(responseCode = "201", description = "Transaction created")
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public TransactionResponse create(
 
