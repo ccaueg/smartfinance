@@ -23,9 +23,6 @@ public class TransactionServiceTest {
     @Mock
     private TransactionRepository transactionRepository;
 
-    @Mock
-    private CategoryRepository categoryRepository;
-
     @InjectMocks
     private TransactionService transactionService;
 
