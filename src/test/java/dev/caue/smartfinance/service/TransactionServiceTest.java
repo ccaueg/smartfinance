@@ -2,7 +2,6 @@ package dev.caue.smartfinance.service;
 
 import dev.caue.smartfinance.domain.transaction.Transaction;
 import dev.caue.smartfinance.exception.TransactionNotFoundException;
-import dev.caue.smartfinance.repository.CategoryRepository;
 import dev.caue.smartfinance.repository.TransactionRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
