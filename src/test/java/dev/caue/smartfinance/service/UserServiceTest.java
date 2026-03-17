@@ -45,7 +45,7 @@ class UserServiceTest {
                 .id(1L)
                 .email("test@email.com")
                 .password("encoded")
-                .userRole(UserRole.USER)
+                .role(UserRole.USER)
                 .build();
 
         when(userRepository.findByEmail(request.email())).thenReturn(Optional.of(user));
@@ -62,7 +62,7 @@ class UserServiceTest {
                 .id(1L)
                 .email("test@email.com")
                 .password("encoded")
-                .userRole(UserRole.USER)
+                .role(UserRole.USER)
                 .build();
 
         when(userRepository.findByEmail(request.email())).thenReturn(Optional.of(user));
